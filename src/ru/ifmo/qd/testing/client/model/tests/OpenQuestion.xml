@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.tests">
+
+    <subclass name="ru.ifmo.qd.testing.client.model.tests.OpenQuestion"
+              extends="ru.ifmo.qd.testing.client.model.tests.Question" discriminator-value="OPEN">
+        <property name="answerText" column="ANSWER" type="text" length="2147483647"/>
+    </subclass>
+
+</hibernate-mapping>

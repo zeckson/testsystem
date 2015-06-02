@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <subclass name="ru.ifmo.qd.testing.client.model.tests.ClosedAnswer"
+              extends="ru.ifmo.qd.testing.client.model.tests.Answer"
+              discriminator-value="CLOSED">
+        <property name="name" column="ANSWER_NAME"/>
+        <property name="right" column="ANSWER_RIGHT"/>
+    </subclass>
+
+</hibernate-mapping>

@@ -1,0 +1,1 @@
+mysqldump -h localhost -u root -p %1 > %1_%2.sql

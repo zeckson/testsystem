@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.users">
+    <subclass name="User" extends="Person" discriminator-value="USER">
+
+        <property name="group" column="PERSON_GROUP"/>
+        <property name="tutor" column="PERSON_TUTOR"/>
+
+    </subclass>
+
+</hibernate-mapping>

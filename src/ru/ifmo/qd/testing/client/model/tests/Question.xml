@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.tests">
+
+    <class name="Question" table="QUESTION" abstract="true" dynamic-update="true">
+        <id name="id" column="QUESTION_ID">
+            <generator class="native"/>
+        </id>
+
+        <discriminator column="QUESTION_TYPE" type="string"/>
+
+        <property name="name" column="NAME"/>
+        <property name="mainText" column="TEXT" type="text" length="2147483647"/>
+        <property name="weight" column="WEIGHT"/>
+        <property name="time" column="TIME"/>
+        <many-to-one name="questionGroup" column="QUESTION_GROUP_ID" not-null="true" class="QuestionGroup"/>
+
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.users">
+    <class name="Person" abstract="true" table="PEOPLE">
+
+        <id name="id" column="PERSON_ID">
+            <generator class="native"/>
+        </id>
+
+        <discriminator type="string" column="PERSON_PRIVILIGIES"/>
+
+        <property name="name" column="PERSON_NAME"/>
+        <property name="surename" column="PERSON_SURENAME"/>
+        <property name="info" column="PERSON_INFO"/>
+        <property name="loginName" column="PERSON_LOGIN"/>
+        <property name="password" column="PERSON_PASSWORD"/>
+        <property name="associatedSubjects" column="PERSON_SUBJECTS"/>
+
+    </class>
+
+</hibernate-mapping>

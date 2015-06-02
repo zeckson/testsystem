@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.tests">
+
+    <class name="Subject" table="SUBJECT">
+
+        <id name="id" column="SUBJECT_ID">
+            <generator class="native"/>
+        </id>
+
+        <property name="subjectName" column="SUBJECT_NAME"/>
+        <property name="description" column="SUBJECT_DESCRIPTOR"/>
+        <property name="creatorName" column="SUBJECT_CREATOR"/>
+
+        <bag name="blocks" cascade="all-delete-orphan" lazy="false" inverse="true">
+            <key column="SUBJECT_ID"/>
+            <one-to-many class="Block" not-found="ignore"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>

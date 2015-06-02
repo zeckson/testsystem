@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.statistics">
+
+    <class name="ru.ifmo.qd.testing.client.model.statistics.AnsweringStatistic" table="STATISTIC" dynamic-update="true">
+        <id name="id" column="SELF_ID">
+            <generator class="native"/>
+        </id>
+        <property name="personID" column="PERSON_ID"/>
+        <property name="questionID" column="QUESTION_ID"/>
+        <property name="answer" column="ANSWER" type="text" length="2147483647"/>
+        <property name="date" column="DATE"/>
+        <property name="answerTime" column="TIME"/>
+        <property name="tryNum" column="TRY_NUMBER"/>
+        <property name="score" column="SCORE"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<module rename-to="testing">
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.i18n.I18N"/>
+
+    <entry-point class='ru.ifmo.qd.testing.client.GWTEntryPoint'/>
+
+    <extend-property name="locale" values="ru"/>
+
+
+</module>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.ifmo.qd.testing.client.model.tests.Answer" abstract="true" table="ANSWER" dynamic-update="true">
+        <id name="id" column="ANSWER_ID">
+            <generator class="native"/>
+        </id>
+        <discriminator type="string" column="ANSWER_TYPE"/>
+        <many-to-one name="question" column="QUESTION_ID" not-null="true" 
+                     class="ru.ifmo.qd.testing.client.model.tests.Question"/>
+    </class>
+</hibernate-mapping>

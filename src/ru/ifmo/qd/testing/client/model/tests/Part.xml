@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ru.ifmo.qd.testing.client.model.tests">
+
+    <class name="Part" table="PART">
+
+        <id name="id" column="PART_ID">
+            <generator class="native"/>
+        </id>
+
+        <property name="partName"/>
+        <property name="description"/>
+        <many-to-one name="block" column="BLOCK_ID" not-null="true" class="Block"/>
+        <bag name="questionGroups" cascade="all-delete-orphan" lazy="false" inverse="true">
+            <key column="PART_ID"/>
+            <one-to-many class="QuestionGroup" not-found="ignore"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>
